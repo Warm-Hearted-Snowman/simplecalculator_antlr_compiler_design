@@ -1,57 +1,56 @@
 grammar SimpleCalculator;
 
-program : statements;
+program : (stmt)* ;
 
-statements : statement
-           | statements statement;
-
-statement : ID ASGN expr SEMICOLON #variableDeclaration_Statement
-          | BEGIN statements END #beginEnd_Statement
-          | IF expr THEN statement (ELSE statement)? #ifElse_Statement
-          | WHILE expr DO statement #whileDo_Statement
-          | FOR ID ASGN INT COLON INT DO statement #forDo_Statement
-          | LOOP ID COLON INT DO statement #loopDo_Statement
-          | PRINT (STRING COMMA)? ID SEMICOLON #print_Statement
-          ;
-
-expr: assignmentExpression;
-
-assignmentExpression: equalityExpression (ASGN assignmentExpression)*;
-
-equalityExpression: relationalExpression ((EQ | NEQ) relationalExpression)*;
-
-relationalExpression: additiveExpression ((LT | GT | LTE | GTE) additiveExpression)*;
-
-additiveExpression: multiplicativeExpression ((PLUS | MINUS) multiplicativeExpression)*;
-
-multiplicativeExpression: powerExpression ((MULT | DIV | MOD ) powerExpression)*;
-
-powerExpression: unaryExpression ((POW) unaryExpression)* ;
-
-unaryExpression: (PLUS | MINUS | NOT ) unaryExpression | primaryExpression ;
-
-primaryExpression: INT | STRING | ID | LPAREN expr RPAREN;
+stmt: ID EQ expr #variableDeclaration_Statement
+    | Begin (stmt)* END #beginEnd_Statement
+    | IF expr THEN stmt (ELSE stmt)? #ifElse_Statement
+    | WHILE expr DO stmt #whileDo_Statement
+    | FOR ID EQ Number COLON Number DO stmt #forDo_Statement
+    | LOOP ID COLON Number DO stmt #loopDo_Statement
+    | PRINT (SL COMMA)* ID #print_Statement
+    ;
 
 
-LPAREN : '(';
-RPAREN : ')';
+expr: bin #expr_bin
+    | expr BOOL bin #expr_bool
+    ;
+
+
+bin: mathematical #bin_mathematical
+  | bin BINOP mathematical #bin_binop
+  ;
+
+mathematical: term #mathematical_term
+  | mathematical PLUS term #mathematical_plus
+  | mathematical MINUS term #mathematical_minus
+  ;
+
+term: factor #term_factor
+  | term MULT factor #term_mult
+  | term DIV factor #term_div
+  ;
+
+factor: Number #factor_number
+  | MINUS factor #factor_minus_number
+  | ID #factor_id
+  | factor POWER Number #factor_power
+  | OPENP expr CLOSEP #factor_expr
+  ;
+
+BOOL : '==' | '!=';
+BINOP :  '<' | '>' | '<=' | '>=' | '!' ;
+OPENP : '(' ;
+CLOSEP : ')' ;
 PLUS : '+';
-MINUS : '-';
-MULT : '*';
-DIV : '/';
-MOD: '%';
-LT : '<';
-GT : '>';
-LTE : '<=';
-GTE : '>=';
-EQ : '==';
-NEQ : '!=';
-POW : '^';
-NOT : '!';
-ASGN : '=';
-
-BEGIN : 'begin';
-END : 'end';
+MINUS : '-' ;
+MULT : '*' ;
+DIV : '/' ;
+POWER : '^' ;
+Number : [0-9]+ ;
+EQ : '=' ;
+COLON : ':';
+PRINT : 'print';
 IF : 'if';
 THEN : 'then';
 ELSE : 'else';
@@ -59,14 +58,9 @@ WHILE : 'while';
 DO : 'do';
 FOR : 'for';
 LOOP : 'loop';
-PRINT : 'print';
-
-COMMA : ',';
-SEMICOLON : ';';
-COLON : ':';
-
-WS : [ \t\r\n]+ -> skip;
-
-ID: [a-zA-Z]+;
-INT: [0-9]+;
-STRING: '"' ~["\r\n]* '"';
+Begin : 'begin';
+END : 'end';
+COMMA: ',';
+ID : [a-zA-Z][a-zA-Z0-9_]* ;
+SL : '"' ~["\r\n]* '"';
+WS :[ \t\n\r]+ -> skip;

@@ -17,39 +17,201 @@ class SimpleCalculatorListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by SimpleCalculatorParser#statements.
-    def enterStatements(self, ctx:SimpleCalculatorParser.StatementsContext):
+    # Enter a parse tree produced by SimpleCalculatorParser#variableDeclaration_Statement.
+    def enterVariableDeclaration_Statement(self, ctx:SimpleCalculatorParser.VariableDeclaration_StatementContext):
         pass
 
-    # Exit a parse tree produced by SimpleCalculatorParser#statements.
-    def exitStatements(self, ctx:SimpleCalculatorParser.StatementsContext):
-        pass
-
-
-    # Enter a parse tree produced by SimpleCalculatorParser#statement.
-    def enterStatement(self, ctx:SimpleCalculatorParser.StatementContext):
-        pass
-
-    # Exit a parse tree produced by SimpleCalculatorParser#statement.
-    def exitStatement(self, ctx:SimpleCalculatorParser.StatementContext):
+    # Exit a parse tree produced by SimpleCalculatorParser#variableDeclaration_Statement.
+    def exitVariableDeclaration_Statement(self, ctx:SimpleCalculatorParser.VariableDeclaration_StatementContext):
         pass
 
 
-    # Enter a parse tree produced by SimpleCalculatorParser#expr.
-    def enterExpr(self, ctx:SimpleCalculatorParser.ExprContext):
+    # Enter a parse tree produced by SimpleCalculatorParser#beginEnd_Statement.
+    def enterBeginEnd_Statement(self, ctx:SimpleCalculatorParser.BeginEnd_StatementContext):
         pass
 
-    # Exit a parse tree produced by SimpleCalculatorParser#expr.
-    def exitExpr(self, ctx:SimpleCalculatorParser.ExprContext):
+    # Exit a parse tree produced by SimpleCalculatorParser#beginEnd_Statement.
+    def exitBeginEnd_Statement(self, ctx:SimpleCalculatorParser.BeginEnd_StatementContext):
         pass
 
 
-    # Enter a parse tree produced by SimpleCalculatorParser#binop.
-    def enterBinop(self, ctx:SimpleCalculatorParser.BinopContext):
+    # Enter a parse tree produced by SimpleCalculatorParser#ifElse_Statement.
+    def enterIfElse_Statement(self, ctx:SimpleCalculatorParser.IfElse_StatementContext):
         pass
 
-    # Exit a parse tree produced by SimpleCalculatorParser#binop.
-    def exitBinop(self, ctx:SimpleCalculatorParser.BinopContext):
+    # Exit a parse tree produced by SimpleCalculatorParser#ifElse_Statement.
+    def exitIfElse_Statement(self, ctx:SimpleCalculatorParser.IfElse_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#whileDo_Statement.
+    def enterWhileDo_Statement(self, ctx:SimpleCalculatorParser.WhileDo_StatementContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#whileDo_Statement.
+    def exitWhileDo_Statement(self, ctx:SimpleCalculatorParser.WhileDo_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#forDo_Statement.
+    def enterForDo_Statement(self, ctx:SimpleCalculatorParser.ForDo_StatementContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#forDo_Statement.
+    def exitForDo_Statement(self, ctx:SimpleCalculatorParser.ForDo_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#loopDo_Statement.
+    def enterLoopDo_Statement(self, ctx:SimpleCalculatorParser.LoopDo_StatementContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#loopDo_Statement.
+    def exitLoopDo_Statement(self, ctx:SimpleCalculatorParser.LoopDo_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#print_Statement.
+    def enterPrint_Statement(self, ctx:SimpleCalculatorParser.Print_StatementContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#print_Statement.
+    def exitPrint_Statement(self, ctx:SimpleCalculatorParser.Print_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#expr_bin.
+    def enterExpr_bin(self, ctx:SimpleCalculatorParser.Expr_binContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#expr_bin.
+    def exitExpr_bin(self, ctx:SimpleCalculatorParser.Expr_binContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#expr_bool.
+    def enterExpr_bool(self, ctx:SimpleCalculatorParser.Expr_boolContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#expr_bool.
+    def exitExpr_bool(self, ctx:SimpleCalculatorParser.Expr_boolContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#bin_mathematical.
+    def enterBin_mathematical(self, ctx:SimpleCalculatorParser.Bin_mathematicalContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#bin_mathematical.
+    def exitBin_mathematical(self, ctx:SimpleCalculatorParser.Bin_mathematicalContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#bin_binop.
+    def enterBin_binop(self, ctx:SimpleCalculatorParser.Bin_binopContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#bin_binop.
+    def exitBin_binop(self, ctx:SimpleCalculatorParser.Bin_binopContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#mathematical_minus.
+    def enterMathematical_minus(self, ctx:SimpleCalculatorParser.Mathematical_minusContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#mathematical_minus.
+    def exitMathematical_minus(self, ctx:SimpleCalculatorParser.Mathematical_minusContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#mathematical_term.
+    def enterMathematical_term(self, ctx:SimpleCalculatorParser.Mathematical_termContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#mathematical_term.
+    def exitMathematical_term(self, ctx:SimpleCalculatorParser.Mathematical_termContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#mathematical_plus.
+    def enterMathematical_plus(self, ctx:SimpleCalculatorParser.Mathematical_plusContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#mathematical_plus.
+    def exitMathematical_plus(self, ctx:SimpleCalculatorParser.Mathematical_plusContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#term_factor.
+    def enterTerm_factor(self, ctx:SimpleCalculatorParser.Term_factorContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#term_factor.
+    def exitTerm_factor(self, ctx:SimpleCalculatorParser.Term_factorContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#term_div.
+    def enterTerm_div(self, ctx:SimpleCalculatorParser.Term_divContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#term_div.
+    def exitTerm_div(self, ctx:SimpleCalculatorParser.Term_divContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#term_mult.
+    def enterTerm_mult(self, ctx:SimpleCalculatorParser.Term_multContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#term_mult.
+    def exitTerm_mult(self, ctx:SimpleCalculatorParser.Term_multContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#factor_minus_number.
+    def enterFactor_minus_number(self, ctx:SimpleCalculatorParser.Factor_minus_numberContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#factor_minus_number.
+    def exitFactor_minus_number(self, ctx:SimpleCalculatorParser.Factor_minus_numberContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#factor_id.
+    def enterFactor_id(self, ctx:SimpleCalculatorParser.Factor_idContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#factor_id.
+    def exitFactor_id(self, ctx:SimpleCalculatorParser.Factor_idContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#factor_power.
+    def enterFactor_power(self, ctx:SimpleCalculatorParser.Factor_powerContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#factor_power.
+    def exitFactor_power(self, ctx:SimpleCalculatorParser.Factor_powerContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#factor_expr.
+    def enterFactor_expr(self, ctx:SimpleCalculatorParser.Factor_exprContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#factor_expr.
+    def exitFactor_expr(self, ctx:SimpleCalculatorParser.Factor_exprContext):
+        pass
+
+
+    # Enter a parse tree produced by SimpleCalculatorParser#factor_number.
+    def enterFactor_number(self, ctx:SimpleCalculatorParser.Factor_numberContext):
+        pass
+
+    # Exit a parse tree produced by SimpleCalculatorParser#factor_number.
+    def exitFactor_number(self, ctx:SimpleCalculatorParser.Factor_numberContext):
         pass
 
 
