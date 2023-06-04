@@ -1,0 +1,2 @@
+from SimpleCalculatorVisitor import SimpleCalculatorVisitor
+class MyCustomVisitor(SimpleCalculatorVisitor):
