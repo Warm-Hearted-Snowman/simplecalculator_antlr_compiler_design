@@ -94,18 +94,13 @@ class SimpleCalculatorVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SimpleCalculatorParser#term_mod.
+    def visitTerm_mod(self, ctx:SimpleCalculatorParser.Term_modContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SimpleCalculatorParser#term_mult.
     def visitTerm_mult(self, ctx:SimpleCalculatorParser.Term_multContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by SimpleCalculatorParser#factor_minus_number.
-    def visitFactor_minus_number(self, ctx:SimpleCalculatorParser.Factor_minus_numberContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by SimpleCalculatorParser#factor_id.
-    def visitFactor_id(self, ctx:SimpleCalculatorParser.Factor_idContext):
         return self.visitChildren(ctx)
 
 
@@ -114,13 +109,28 @@ class SimpleCalculatorVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleCalculatorParser#factor_expr.
-    def visitFactor_expr(self, ctx:SimpleCalculatorParser.Factor_exprContext):
+    # Visit a parse tree produced by SimpleCalculatorParser#factor_finalfactor.
+    def visitFactor_finalfactor(self, ctx:SimpleCalculatorParser.Factor_finalfactorContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleCalculatorParser#factor_number.
-    def visitFactor_number(self, ctx:SimpleCalculatorParser.Factor_numberContext):
+    # Visit a parse tree produced by SimpleCalculatorParser#finalfactor_number.
+    def visitFinalfactor_number(self, ctx:SimpleCalculatorParser.Finalfactor_numberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleCalculatorParser#finalfactor_minus_number.
+    def visitFinalfactor_minus_number(self, ctx:SimpleCalculatorParser.Finalfactor_minus_numberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleCalculatorParser#finalfactor_id.
+    def visitFinalfactor_id(self, ctx:SimpleCalculatorParser.Finalfactor_idContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleCalculatorParser#finalfactor_expr.
+    def visitFinalfactor_expr(self, ctx:SimpleCalculatorParser.Finalfactor_exprContext):
         return self.visitChildren(ctx)
 
 
