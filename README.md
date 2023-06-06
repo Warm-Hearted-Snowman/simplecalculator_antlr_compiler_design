@@ -67,9 +67,7 @@ Here are some of the included sample codes:
     for a=1:4 do
     begin
         if a % 2 == 1 then
-           
-
- print "a is odd: ", a;
+            print "a is odd: ", a;
     end
     ```
 4. While Loop with Conditional Statement:
